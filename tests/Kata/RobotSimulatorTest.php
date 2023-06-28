@@ -12,13 +12,10 @@ class RobotSimulatorTest extends TestCase
         $this->robotSimulator = new RobotSimulator();
     }
 
-    public function testShallPass(): void
+    public function testTurnRight(): void
     {
-        $this->assertEquals(1, 1);
-    }
+        $this->robotSimulator->execute('R');
 
-    public function testHandleReturnTrue(): void
-    {
-        $this->assertEquals(true, $this->robotSimulator->handle());
+        $this->assertEquals('E', $this->robotSimulator->direction());
     }
 }
