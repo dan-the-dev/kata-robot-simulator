@@ -6,7 +6,11 @@ use Closure;
 
 class RobotSimulator
 {
-    public function __construct(private Direction $direction = new North())
+    public function __construct(
+        private Direction $direction = new North(),
+        private int $x = 0,
+        private int $y = 0,
+    )
     {
     }
 
@@ -21,6 +25,16 @@ class RobotSimulator
         return $this->direction;
     }
 
+    public function x(): int
+    {
+        return $this->x;
+    }
+
+    public function y(): int
+    {
+        return $this->y;
+    }
+
     /**
      * @return Closure
      */
@@ -31,7 +45,12 @@ class RobotSimulator
                 $this->direction = $this->direction->left();
                 return;
             }
-            $this->direction = $this->direction->right();
+            if ($command === 'R') {
+                $this->direction = $this->direction->right();
+                return;
+            }
+            // advance
+            $this->x++;
         };
     }
 }
