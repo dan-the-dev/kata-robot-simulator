@@ -8,8 +8,12 @@ class RobotSimulator
     {
     }
 
-    public function execute(): void
+    public function execute(string $command): void
     {
+        if ($command === 'L') {
+            $this->direction = 'W';
+            return;
+        }
         $this->direction = 'E';
     }
 
