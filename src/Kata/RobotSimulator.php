@@ -2,7 +2,7 @@
 
 namespace Kata;
 
-class Index
+class RobotSimulator
 {
     public function handle(): bool
     {
