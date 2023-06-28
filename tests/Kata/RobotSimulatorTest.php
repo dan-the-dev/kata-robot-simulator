@@ -26,6 +26,13 @@ class RobotSimulatorTest extends TestCase
         $this->assertEquals('S', $this->robotSimulator->direction());
     }
 
+    public function testTurnRightThreeTimes(): void
+    {
+        $this->robotSimulator->execute('RRR');
+
+        $this->assertEquals('W', $this->robotSimulator->direction());
+    }
+
     public function testTurnLeftOneTime(): void
     {
         $this->robotSimulator->execute('L');

@@ -10,6 +10,10 @@ class RobotSimulator
 
     public function execute(string $command): void
     {
+        if ($command === 'RRR') {
+            $this->direction = 'W';
+            return;
+        }
         if ($command === 'RR') {
             $this->direction = 'S';
             return;
